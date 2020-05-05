@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "487833042255",
+    "firebase_url": "https://leftoverfoodtugasuas.firebaseio.com",
+    "project_id": "leftoverfoodtugasuas",
+    "storage_bucket": "leftoverfoodtugasuas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487833042255:android:daf246b5f2aad9dbe2193a",
+        "android_client_info": {
+          "package_name": "id.ac.umn.leftoverfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487833042255-gbg367hibh8g9l9np8ni216hvb41c2it.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.umn.leftoverfood",
+            "certificate_hash": "6bf94fa6df799d83360fa3f7431810d83a621b28"
+          }
+        },
+        {
+          "client_id": "487833042255-eg9bq680g45pab3jatnmej9r1r5gpklf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhjL1f6J9y84wIW9m0PByTPUMbqf-89fk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487833042255-eg9bq680g45pab3jatnmej9r1r5gpklf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
