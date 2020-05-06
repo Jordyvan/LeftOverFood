@@ -13,29 +13,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Username"
-        android:textSize="20dp">
-    </TextView>
+        android:textSize="20dp"></TextView>
+
     <EditText
         android:id="@+id/userET"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/white"
-        android:gravity="center">
-    </EditText>
+        android:gravity="center"></EditText>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
-        android:textSize="20dp">
-    </TextView>
+        android:textSize="20dp"></TextView>
+
     <EditText
         android:id="@+id/passET"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/white"
         android:gravity="center"
-        android:inputType="textPassword">
-    </EditText>
+        android:inputType="textPassword"></EditText>
+
     <Button
         android:id="@+id/lgnBtn"
         android:layout_width="match_parent"
@@ -43,9 +43,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10px"
         android:layout_marginRight="10px"
-        android:text="Login"
-        >
-
-    </Button>
+        android:text="Login"></Button>
 
 </LinearLayout>
