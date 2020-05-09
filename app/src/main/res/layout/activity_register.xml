@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+    android:orientation="vertical"
+    android:background="@color/colorBG"
+    android:gravity="center"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20dp"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"></TextView>
+
+    <EditText
+        android:id="@+id/ETUserRegis"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:layout_marginTop="20px"></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"></TextView>
+
+    <EditText
+        android:id="@+id/ETPassRegis"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:layout_marginTop="20px"></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"></TextView>
+
+    <EditText
+        android:id="@+id/ETCoPassRegis"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:layout_marginTop="20px"></EditText>
+
+    <Spinner
+        android:id="@+id/RoleID"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"></Spinner>
+
+    <Button
+        android:id="@+id/btnRegis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+        android:text="Register"></Button>
+
+    <TextView
+        android:id="@+id/TVLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Login?"
+        android:textColor="@color/Blue"
+        android:layout_marginTop="20px"></TextView>
+
+</LinearLayout>
