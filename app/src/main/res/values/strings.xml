@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LeftOverFood</string>
+    <string-array name="role">
+        <item>Restoran</item>
+        <item>Customer</item>
+    </string-array>
 </resources>

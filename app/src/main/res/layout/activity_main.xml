@@ -45,4 +45,13 @@
         android:layout_marginRight="10px"
         android:text="Login"></Button>
 
+    <TextView
+        android:id="@+id/registerTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Register"
+        android:textColor="@color/Blue"
+        android:layout_marginTop="20px"></TextView>
+
 </LinearLayout>
