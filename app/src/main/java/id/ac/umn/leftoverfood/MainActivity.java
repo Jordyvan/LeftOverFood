@@ -59,45 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
                 username = usernameET.getText().toString();
                 pass = passET.getText().toString();
-                if(!username.isEmpty()) {
-                    if(!pass.isEmpty()) {
-                        database.child("user").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()){
-                                    if((noteDataSnapshot.child("username").getValue(String.class).equals(username)) && (noteDataSnapshot.child("pass").getValue(String.class).equals(pass))){
-                                        //^^cek repeat username dan password dari firebase
-                                        loginIn = true;
-                                        role = noteDataSnapshot.child("role").getValue(Integer.class);
-                                    }
 
-                                }
-                                if(loginIn == true){
-                                    if(role == 1){
-                                        Intent intent = new Intent(MainActivity.this, Restoran.class);
-                                        startActivity(intent);
-                                    }else {
-                                        Intent intent = new Intent(MainActivity.this, Customer.class);
-                                        startActivity(intent);
-                                    }
-                                }else {
-                                    Toast.makeText(MainActivity.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
-                                }
-
-                            }
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-                                System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
-                            }
-                        });
-
-
-                    }else {
-                        Toast.makeText(MainActivity.this, "Please Fill The Password", Toast.LENGTH_LONG).show();
-                    }
-                }else {
-                    Toast.makeText(MainActivity.this, "Please Fill The Username", Toast.LENGTH_LONG).show();
-                }
+                userLogin(username, pass);
             }
         });
 
@@ -112,5 +75,46 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    void userLogin(String username, String password){
+        if(!username.isEmpty()) {
+            if(!pass.isEmpty()) {
+                database.child("user").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()){
+                            if((noteDataSnapshot.child("username").getValue(String.class).equals(username)) && (noteDataSnapshot.child("pass").getValue(String.class).equals(pass))){
+                                //^^cek repeat username dan password dari firebase
+                                loginIn = true;
+                                role = noteDataSnapshot.child("role").getValue(Integer.class);
+                            }
+
+                        }
+                        if(loginIn == true){
+                            if(role == 1){
+                                Intent intent = new Intent(MainActivity.this, Restoran.class);
+                                startActivity(intent);
+                            }else {
+                                Intent intent = new Intent(MainActivity.this, Customer.class);
+                                startActivity(intent);
+                            }
+                        }else {
+                            Toast.makeText(MainActivity.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
+                    }
+                });
+
+
+            }else {
+                Toast.makeText(MainActivity.this, "Please Fill The Password", Toast.LENGTH_LONG).show();
+            }
+        }else {
+            Toast.makeText(MainActivity.this, "Please Fill The Username", Toast.LENGTH_LONG).show();
+        }
+    }
 
 }
