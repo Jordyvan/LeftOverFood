@@ -111,6 +111,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(Register.this, "Register Success", Toast.LENGTH_LONG).show();
+                finish();
             }
         });
     }

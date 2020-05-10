@@ -96,9 +96,11 @@ public class Login extends AppCompatActivity {
                             if (role == 1) {
                                 Intent intent = new Intent(Login.this, Restoran.class);
                                 startActivity(intent);
+                                finish();
                             } else {
                                 Intent intent = new Intent(Login.this, Customer.class);
                                 startActivity(intent);
+                                finish();
                             }
                         } else {
                             Toast.makeText(Login.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
