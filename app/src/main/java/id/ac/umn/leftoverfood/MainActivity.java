@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,12 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText usernameET , passET;
     private Button lgn;
     private TextView RegisterTV;
-    private String username, pass;
     private FirebaseAuth mAuth;
     private DatabaseReference database;
     private Boolean loginIn;
     private int role;
-
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +45,14 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance().getReference();
 
-
         RegisterTV = findViewById(R.id.registerTV);
         lgn = findViewById(R.id.lgnBtn);
 
+        // Initialize Shared Preferences and Auto Login
+        sp = getSharedPreferences("Login", MODE_PRIVATE);
+        userLogin(sp.getString("username", ""),
+                  sp.getString("password", ""),
+                  true);
 
         lgn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 usernameET = findViewById(R.id.userET);
                 passET = findViewById(R.id.passET);
 
-                username = usernameET.getText().toString();
-                pass = passET.getText().toString();
+                String username = usernameET.getText().toString();
+                String pass = passET.getText().toString();
 
-                userLogin(username, pass);
+                userLogin(username, pass, false);
             }
         });
 
@@ -71,25 +75,32 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
-    void userLogin(String username, String password){
+    void userLogin(final String username, final String pass, final Boolean autoLogin){
         if(!username.isEmpty()) {
             if(!pass.isEmpty()) {
                 database.child("user").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()){
-                            if((noteDataSnapshot.child("username").getValue(String.class).equals(username)) && (noteDataSnapshot.child("pass").getValue(String.class).equals(pass))){
+                            if((noteDataSnapshot.child("username").getValue(String.class).equals(username)) &&
+                               (noteDataSnapshot.child("pass").getValue(String.class).equals(pass))){
                                 //^^cek repeat username dan password dari firebase
                                 loginIn = true;
                                 role = noteDataSnapshot.child("role").getValue(Integer.class);
+
+                                SharedPreferences.Editor ed = sp.edit();
+                                ed.putString("username", username);
+                                ed.putString("pass", pass);
+                                ed.putInt("role", role);
+                                ed.apply();
                             }
 
                         }
-                        if(loginIn == true){
+                        if(loginIn){
+                            if(autoLogin) role = sp.getInt("role", 0);
+
                             if(role == 1){
                                 Intent intent = new Intent(MainActivity.this, Restoran.class);
                                 startActivity(intent);
@@ -98,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }else {
-                            Toast.makeText(MainActivity.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
+                            if(!autoLogin)
+                                Toast.makeText(MainActivity.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
                         }
 
                     }
