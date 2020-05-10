@@ -51,33 +51,10 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Shared Preferences and Auto Login
         sp = getSharedPreferences("Login", MODE_PRIVATE);
         userLogin(sp.getString("username", ""),
-                  sp.getString("password", ""),
-                  true);
-
-        lgn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginIn = false;
-                usernameET = findViewById(R.id.userET);
-                passET = findViewById(R.id.passET);
-
-                String username = usernameET.getText().toString();
-                String pass = passET.getText().toString();
-
-                userLogin(username, pass, false);
-            }
-        });
-
-        RegisterTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Register.class);
-                startActivity(intent);
-            }
-        });
+                sp.getString("pass", ""));
     }
 
-    void userLogin(final String username, final String pass, final Boolean autoLogin){
+    void userLogin(final String username, final String pass){
         if(!username.isEmpty()) {
             if(!pass.isEmpty()) {
                 database.child("user").addValueEventListener(new ValueEventListener() {
@@ -89,17 +66,14 @@ public class MainActivity extends AppCompatActivity {
                                 //^^cek repeat username dan password dari firebase
                                 loginIn = true;
                                 role = noteDataSnapshot.child("role").getValue(Integer.class);
-
-                                SharedPreferences.Editor ed = sp.edit();
-                                ed.putString("username", username);
-                                ed.putString("pass", pass);
-                                ed.putInt("role", role);
-                                ed.apply();
                             }
 
                         }
                         if(loginIn){
-                            if(autoLogin) role = sp.getInt("role", 0);
+                            role = sp.getInt("role", 2);
+
+                            String roleText = role == 1 ? "Restoran" : "Customer" + ", " + Integer.toString(role);
+                            Toast.makeText(MainActivity.this, "Logged in as " + username + " (" + roleText + ")", Toast.LENGTH_SHORT).show();
 
                             if(role == 1){
                                 Intent intent = new Intent(MainActivity.this, Restoran.class);
@@ -108,24 +82,19 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent = new Intent(MainActivity.this, Customer.class);
                                 startActivity(intent);
                             }
-                        }else {
-                            if(!autoLogin)
-                                Toast.makeText(MainActivity.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
+                            finish();
                         }
-
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                         System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
                     }
                 });
-
-
-            }else {
-                Toast.makeText(MainActivity.this, "Please Fill The Password", Toast.LENGTH_LONG).show();
             }
         }else {
-            Toast.makeText(MainActivity.this, "Please Fill The Username", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+            finish();
         }
     }
 
