@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,8 +19,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class Register extends AppCompatActivity {
     private TextView login;
@@ -27,6 +33,7 @@ public class Register extends AppCompatActivity {
     private EditText username, pass, CoPass;
     private DatabaseReference database;
     private int role;
+    private static boolean duplicate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +64,8 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                duplicate = false;
+
                 if(spinner.getSelectedItem().toString().equals("Restoran")){
                     role = 1;
                     //restoran
@@ -64,6 +73,7 @@ public class Register extends AppCompatActivity {
                     role = 2;
                     //customer
                 }
+
 
                 //cek username kosong atau tidak
                 if(!username.getText().toString().isEmpty()) {
@@ -73,7 +83,7 @@ public class Register extends AppCompatActivity {
                         if(!CoPass.getText().toString().isEmpty()){
                             //cek pass ama comfirm pass match atau tidak
                             if(pass.getText().toString().equals(CoPass.getText().toString())){
-                                submitUserToFB(new User(username.getText().toString(),pass.getText().toString(),role));
+                                submitUserToFB(new User(username.getText().toString(),pass.getText().toString(),role),username.getText().toString());
                             }
                             // jika pass tidak match
                             else {
@@ -106,7 +116,35 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    private  void submitUserToFB(User user){
+    private void submitUserToFB(final User user, final String userN){
+        //cek nama user udh ada apa belum
+        database.child("user").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
+                    if (Objects.equals(noteDataSnapshot.child("username").getValue(String.class), userN)) {
+                        duplicate = true;
+                    }
+                }
+
+                if(!duplicate){
+                    submit(user);
+                }else {
+                    Toast.makeText(Register.this, "username has been used", Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
+    private void submit(User user){
         database.child("user").push().setValue(user).addOnSuccessListener(this, new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
@@ -115,4 +153,5 @@ public class Register extends AppCompatActivity {
             }
         });
     }
+
 }
