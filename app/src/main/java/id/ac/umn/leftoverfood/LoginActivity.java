@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private EditText usernameET , passET;
     private Button lgn;
     private TextView RegisterTV;
@@ -62,7 +61,7 @@ public class Login extends AppCompatActivity {
         RegisterTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Register.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -91,18 +90,18 @@ public class Login extends AppCompatActivity {
                         }
                         if (loginIn) {
                             String roleText = role == 1 ? "Restoran" : "Customer" + ", " + Integer.toString(role);
-                            Toast.makeText(Login.this, "Logged in as " + username + " (" + roleText + ")", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Logged in as " + username + " (" + roleText + ")", Toast.LENGTH_SHORT).show();
 
                             if (role == 1) {
-                                Intent intent = new Intent(Login.this, Restoran.class);
+                                Intent intent = new Intent(LoginActivity.this, RestoranActivity.class);
                                 startActivity(intent);
                             } else {
-                                Intent intent = new Intent(Login.this, Customer.class);
+                                Intent intent = new Intent(LoginActivity.this, CustomerActivity.class);
                                 startActivity(intent);
                             }
                             finish();
                         } else {
-                            Toast.makeText(Login.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Username and Password Don't Match", Toast.LENGTH_LONG).show();
                         }
 
                     }
@@ -115,10 +114,10 @@ public class Login extends AppCompatActivity {
 
 
             } else {
-                Toast.makeText(Login.this, "Please Fill The Password", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Please Fill The Password", Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(Login.this, "Please Fill The Username", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "Please Fill The Username", Toast.LENGTH_LONG).show();
         }
     }
 }

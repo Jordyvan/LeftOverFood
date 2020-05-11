@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Customer extends AppCompatActivity {
+public class CustomerActivity extends AppCompatActivity {
     Button btnLogoutC;
 
     @Override
@@ -27,7 +27,7 @@ public class Customer extends AppCompatActivity {
                 ed.putInt("role", 0);
                 ed.apply();
 
-                Intent intent = new Intent(Customer.this, Login.class);
+                Intent intent = new Intent(CustomerActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

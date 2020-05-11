@@ -3,9 +3,6 @@ package id.ac.umn.leftoverfood;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,10 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     private TextView login;
     private Button Regis;
     private EditText username, pass, CoPass;
@@ -87,22 +81,22 @@ public class Register extends AppCompatActivity {
                             }
                             // jika pass tidak match
                             else {
-                                Toast.makeText(Register.this, "Password don't match", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterActivity.this, "Password don't match", Toast.LENGTH_LONG).show();
                             }
                         }
                         //jika confirm pass kosong
                         else {
-                            Toast.makeText(Register.this, "Please Fill The Confirm Password", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "Please Fill The Confirm Password", Toast.LENGTH_LONG).show();
                         }
                     }
                     //jika pass kosong
                     else {
-                        Toast.makeText(Register.this, "Please Fill The Password", Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegisterActivity.this, "Please Fill The Password", Toast.LENGTH_LONG).show();
                     }
                 }
                 //jika username kosong
                 else {
-                    Toast.makeText(Register.this, "Please Fill The Username", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Please Fill The Username", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -130,7 +124,7 @@ public class Register extends AppCompatActivity {
                 if(!duplicate){
                     submit(user);
                 }else {
-                    Toast.makeText(Register.this, "username has been used", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "username has been used", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -148,7 +142,7 @@ public class Register extends AppCompatActivity {
         database.child("user").push().setValue(user).addOnSuccessListener(this, new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(Register.this, "Register Success", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

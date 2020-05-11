@@ -6,25 +6,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private EditText usernameET , passET;
@@ -76,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Logged in as " + username + " (" + roleText + ")", Toast.LENGTH_SHORT).show();
 
                             if(role == 1){
-                                Intent intent = new Intent(MainActivity.this, Restoran.class);
+                                Intent intent = new Intent(MainActivity.this, RestoranActivity.class);
                                 startActivity(intent);
                             }else {
-                                Intent intent = new Intent(MainActivity.this, Customer.class);
+                                Intent intent = new Intent(MainActivity.this, CustomerActivity.class);
                                 startActivity(intent);
                             }
                             finish();
@@ -92,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }else {
-            Intent intent = new Intent(MainActivity.this, Login.class);
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         }

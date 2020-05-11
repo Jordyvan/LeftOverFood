@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".inputMakananActivity">
+    <ImageView
+        android:id="@+id/inputFoto"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <Button
+        android:id="@+id/tambahFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ambil Foto" />
+
+    <TextView
+        android:id="@+id/namaMakanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Nama Makanan :" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="contoh: Gurame Asam Manis" />
+    <TextView
+        android:id="@+id/harga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Harga :" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="contoh: 50000" />
+    <TextView
+        android:id="@+id/tingkatKepedasan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Level pedas :" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="contoh: tidak pedas/pedas" />
+    <TextView
+        android:id="@+id/keterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Keterangan :" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="contoh: ikan dimasak saus tomat dan kopi" />
+
+    <Button
+        android:id="@+id/submitMakanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
+
+</LinearLayout>
