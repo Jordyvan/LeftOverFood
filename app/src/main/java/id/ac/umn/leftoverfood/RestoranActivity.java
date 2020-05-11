@@ -7,14 +7,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class RestoranActivity extends AppCompatActivity {
     Button btnLogoutR;
+    TextView TVWelcomeR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restoran);
+
+        TVWelcomeR = findViewById(R.id.TVWelcomeR);
+        TVWelcomeR.setText("Welcome, "+ User.currentUsername);
 
         btnLogoutR = findViewById(R.id.btnLogoutR);
         btnLogoutR.setOnClickListener(new View.OnClickListener() {

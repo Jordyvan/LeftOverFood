@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                                 //^^cek repeat username dan password dari firebase
                                 loginIn = true;
                                 role = noteDataSnapshot.child("role").getValue(Integer.class);
+                                User.currentUsername = username;
                             }
 
                         }
