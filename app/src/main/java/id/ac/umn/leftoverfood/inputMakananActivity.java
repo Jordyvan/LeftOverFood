@@ -19,7 +19,7 @@ public class inputMakananActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_input_makanan);
         foto = findViewById(R.id.tambahFoto);
         kotakFoto = findViewById(R.id.inputFoto);
         MediaController controller = new MediaController(this);
