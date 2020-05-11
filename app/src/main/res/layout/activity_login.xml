@@ -9,23 +9,35 @@ android:orientation="vertical"
 android:background="@color/colorBG"
 android:gravity="center"
     >
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Username"
-    android:textSize="20sp"/>
 
-<EditText
-    android:id="@+id/userET"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:background="@color/white"
-    android:gravity="center"/>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:src="@drawable/logofix"
+        android:translationY="-200px" />
 
-<TextView
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/grotesque"
+        android:text="Username"
+        android:textColor="@color/FontColor"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/userET"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:gravity="center" />
+
+    <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Password"
+    android:fontFamily="@font/grotesque"
+    android:textColor="@color/FontColor"
     android:textSize="20sp"/>
 
 <EditText
@@ -43,6 +55,7 @@ android:gravity="center"
     android:layout_marginTop="20dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
+    android:fontFamily="@font/grotesque"
     android:text="Login"/>
 
 <TextView

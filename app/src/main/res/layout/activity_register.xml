@@ -6,9 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
     android:orientation="vertical"
-   android:background="#626666"
+    android:background="#626666"
     android:gravity="center"
     >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:src="@drawable/logofix"
+        android:translationY="-0px" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,7 +57,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirm"
+        android:text="Confirm Password"
         android:textSize="20sp"
         android:textColor="#D0CAC9"
         android:fontFamily="@font/grotesque"

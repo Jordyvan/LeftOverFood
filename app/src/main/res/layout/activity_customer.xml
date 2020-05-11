@@ -23,8 +23,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
+            android:fontFamily="@font/grotesque"
             android:text="Welcome, Customer"
             android:textAlignment="center"
+            android:textColor="@color/FontColor"
             android:textSize="30sp" />
 
         <TextView
@@ -35,6 +37,8 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:text="Restoran Terdekat"
+            android:textColor="@color/FontColor"
+            android:fontFamily="@font/grotesque"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -62,6 +66,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
+            android:fontFamily="@font/grotesque"
             android:text="Logout" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

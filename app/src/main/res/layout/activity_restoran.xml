@@ -24,6 +24,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:text="Welcome, Restoran"
+            android:fontFamily="@font/grotesque"
             android:textAlignment="center"
             android:textSize="30sp" />
 
@@ -33,6 +34,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="Nama Restoran"
+            android:fontFamily="@font/grotesque"
             android:textSize="20sp" />
 
         <EditText
@@ -50,7 +52,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:text="Update Data Restoran" />
+            android:text="Update Data Restoran"
+            android:fontFamily="@font/grotesque"/>
         <Button
             android:id="@+id/btnTambahMenu"
             android:layout_width="match_parent"
@@ -58,7 +61,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Tambah Menu" />
+            android:text="Tambah Menu"
+            android:fontFamily="@font/grotesque"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
