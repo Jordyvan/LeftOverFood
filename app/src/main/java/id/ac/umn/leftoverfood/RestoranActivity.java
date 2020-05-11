@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class RestoranActivity extends AppCompatActivity {
-    Button btnLogoutR , btnTambahMenu;
+    Button btnLogoutR , btnTambahMenu, btnEditDataR;
     TextView TVWelcomeR;
 
     @Override
@@ -23,6 +23,7 @@ public class RestoranActivity extends AppCompatActivity {
 
         btnLogoutR = findViewById(R.id.btnLogoutR);
         btnTambahMenu = findViewById(R.id.btnTambahMenu);
+        btnEditDataR = findViewById(R.id.btnEditDataR);
 
         btnLogoutR.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,14 @@ public class RestoranActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RestoranActivity.this, inputMakananActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnEditDataR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RestoranActivity.this, RestoranEditActivity.class);
                 startActivity(intent);
             }
         });

@@ -18,7 +18,7 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="102dp"
             android:src="@drawable/logofix"
             android:translationY="10px" />
@@ -37,32 +37,14 @@
             android:textAlignment="center"
             android:textSize="30sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Nama Restoran"
-            android:textColor="@color/FontColor"
-            android:fontFamily="@font/grotesque"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/ETNamaRestoran"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:gravity="center" />
-
         <Button
-            android:id="@+id/btnUpdateDataR"
+            android:id="@+id/btnEditDataR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
-            android:text="Update Data Restoran"
+            android:text="Edit Data Restoran"
             android:fontFamily="@font/grotesque"/>
         <Button
             android:id="@+id/btnTambahMenu"
