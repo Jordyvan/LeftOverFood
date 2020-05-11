@@ -10,6 +10,10 @@ public class Menu implements Serializable {
     private String FotoUrl;
     private String IDResto;
 
+    public Menu(){
+
+    }
+
     public Menu(String nm, String ds, int hrg, int kwn,String url, String id){
         nama = nm;
         deskripsi = ds;
