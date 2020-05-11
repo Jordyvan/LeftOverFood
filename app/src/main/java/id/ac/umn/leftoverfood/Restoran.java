@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Restoran implements Serializable {
     private String nama;
-    private LatLng lokasi;
+    private String lokasi = "";
+    private LatLng lokasiRaw = new LatLng(0.0, 0.0);
     private List<Menu> menus = new ArrayList<Menu>();
 
     public Restoran(String nm){
         nama = nm;
-        lokasi = new LatLng(0.0, 0.0);
     }
 }
