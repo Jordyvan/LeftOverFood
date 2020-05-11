@@ -44,4 +44,6 @@ public class inputMakananActivity extends AppCompatActivity {
             kotakFoto.setImageBitmap(imageBitmap);
         }
     }
+
+
 }

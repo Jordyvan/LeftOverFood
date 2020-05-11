@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/inputFoto"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="150dp" />
 
     <Button
         android:id="@+id/tambahFoto"
@@ -21,7 +21,6 @@
         android:fontFamily="@font/grotesque"/>
 
     <TextView
-        android:id="@+id/namaMakanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" Nama Makanan :"
@@ -30,14 +29,14 @@
         android:textColor="@color/FontColor"/>
 
     <EditText
+        android:id="@+id/namaMakanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="contoh: Gurame Asam Manis"
+        android:hint="contoh: Gurame Asam Manis"
         android:textSize="25dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>
     <TextView
-        android:id="@+id/harga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" Harga :"
@@ -46,31 +45,32 @@
         android:textColor="@color/FontColor"/>
 
     <EditText
+        android:id="@+id/harga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:text="contoh: 50000"
+        android:hint="contoh: 50000"
         android:textSize="25dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>
     <TextView
-        android:id="@+id/tingkatKepedasan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Level pedas :"
+        android:text=" Jumlah :"
         android:textSize="20dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>/>
 
     <EditText
+        android:id="@+id/jumlah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="contoh: tidak pedas/pedas"
+        android:hint="contoh : 2"
         android:textSize="25dp"
+        android:inputType="number"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>/>
     <TextView
-        android:id="@+id/keterangan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" Keterangan :"
@@ -80,9 +80,10 @@
         />/>
 
     <EditText
+        android:id="@+id/keterangan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="contoh: ikan dimasak saus tomat dan kopi"
+        android:hint="contoh: ikan dimasak saus tomat dan kopi"
         android:textSize="25dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>/>

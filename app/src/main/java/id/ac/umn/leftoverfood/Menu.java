@@ -13,8 +13,8 @@ public class Menu implements Serializable {
         nama = nm;
         kategori = kt;
         deskripsi = ds;
-        hrg = harga;
-        kwn = kuantitas;
+        harga = hrg;
+        kuantitas = kwn ;
     }
 
     public void setNama(String nm){ nama = nm; }
