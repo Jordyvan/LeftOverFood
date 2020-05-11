@@ -85,6 +85,8 @@ public class LoginActivity extends AppCompatActivity {
                                 ed.putString("pass", pass);
                                 ed.putInt("role", role);
                                 ed.apply();
+
+                                User.currentUsername = username;
                             }
 
                         }

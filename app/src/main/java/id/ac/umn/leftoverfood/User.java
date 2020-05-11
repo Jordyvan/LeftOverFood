@@ -3,9 +3,11 @@ package id.ac.umn.leftoverfood;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private static String username;
-    private static String pass;
-    private static int role;
+    private String username;
+    private String pass;
+    private int role;
+
+    public static String currentUsername;
 
     public User(String un, String ps, int rl){
         username = un;

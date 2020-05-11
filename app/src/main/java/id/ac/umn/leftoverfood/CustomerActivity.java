@@ -16,6 +16,8 @@ public class CustomerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer);
 
+
+
         btnLogoutC = findViewById(R.id.btnLogoutC);
         btnLogoutC.setOnClickListener(new View.OnClickListener() {
             @Override
