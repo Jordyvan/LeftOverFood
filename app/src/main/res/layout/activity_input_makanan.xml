@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorBG"
     tools:context=".inputMakananActivity">
     <ImageView
         android:id="@+id/inputFoto"
@@ -16,54 +17,81 @@
         android:id="@+id/tambahFoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ambil Foto" />
+        android:text="Ambil Foto"
+        android:fontFamily="@font/grotesque"/>
 
     <TextView
         android:id="@+id/namaMakanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Nama Makanan :" />
+        android:text=" Nama Makanan :"
+        android:textSize="20dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="contoh: Gurame Asam Manis" />
+        android:text="contoh: Gurame Asam Manis"
+        android:textSize="25dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"/>
     <TextView
         android:id="@+id/harga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Harga :" />
+        android:text=" Harga :"
+        android:textSize="20dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:text="contoh: 50000" />
+        android:text="contoh: 50000"
+        android:textSize="25dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"/>
     <TextView
         android:id="@+id/tingkatKepedasan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Level pedas :" />
+        android:text=" Level pedas :"
+        android:textSize="20dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"/>/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="contoh: tidak pedas/pedas" />
+        android:text="contoh: tidak pedas/pedas"
+        android:textSize="25dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"/>/>
     <TextView
         android:id="@+id/keterangan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Keterangan :" />
+        android:text=" Keterangan :"
+        android:textSize="20dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"
+        />/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="contoh: ikan dimasak saus tomat dan kopi" />
+        android:text="contoh: ikan dimasak saus tomat dan kopi"
+        android:textSize="25dp"
+        android:fontFamily="@font/grotesque"
+        android:textColor="@color/FontColor"/>/>
 
     <Button
         android:id="@+id/submitMakanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="Submit"
+        android:fontFamily="@font/grotesque" />/>
 
 </LinearLayout>

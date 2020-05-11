@@ -16,6 +16,13 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="398dp"
+            android:layout_height="102dp"
+            android:src="@drawable/logofix"
+            android:translationY="10px" />
+
         <TextView
             android:id="@+id/TVWelcomeR"
             android:layout_width="match_parent"
@@ -90,6 +97,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
+            android:fontFamily="@font/grotesque"
             android:text="Logout" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
