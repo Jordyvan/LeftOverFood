@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
                         if(loginIn){
                             role = sp.getInt("role", 2);
 
-                            String roleText = role == 1 ? "Restoran" : "Customer" + ", " + Integer.toString(role);
-                            Toast.makeText(MainActivity.this, "Logged in as " + username + " (" + roleText + ")", Toast.LENGTH_SHORT).show();
+                            //String roleText = role == 1 ? "Restoran" : "Customer" + ", " + Integer.toString(role);
+                            Toast.makeText(MainActivity.this, "Logged in as " + username , Toast.LENGTH_SHORT).show();
 
                             if(role == 1){
                                 Intent intent = new Intent(MainActivity.this, RestoranActivity.class);

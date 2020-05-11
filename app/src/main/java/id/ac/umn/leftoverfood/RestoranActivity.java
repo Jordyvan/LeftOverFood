@@ -9,9 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class RestoranActivity extends AppCompatActivity {
-    Button btnLogoutR , btnTambahMenu;
-    TextView TVWelcomeR;
+    private ArrayList<Menu> ListMenu;
+    private Button btnLogoutR , btnTambahMenu;
+    private TextView TVWelcomeR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
