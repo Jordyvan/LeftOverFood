@@ -3,29 +3,23 @@ package id.ac.umn.leftoverfood;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private String Username;
-    private String Pass;
-    private int role;
-
-    public User(){
-
-    }
-
-    public String getUsername(){
-        return Username;
-    }
-
-    public String getPass(){
-        return Pass;
-    }
-
-    public int getRole(){
-        return role;
-    }
+    private static String username;
+    private static String pass;
+    private static int role;
 
     public User(String un, String ps, int rl){
-        this.Username = un;
-        this.Pass = ps;
-        this.role = rl;
+        username = un;
+        pass = ps;
+        role = rl;
     }
+
+    public void setUsername(String un){ username = un; }
+    public void setPass(String ps){ pass = ps; }
+    public void setRole(int rl){ role = rl; }
+
+    public String getUsername(){ return username; }
+    public String getPass(){ return pass; }
+    public int getRole(){ return role; }
+
+
 }
