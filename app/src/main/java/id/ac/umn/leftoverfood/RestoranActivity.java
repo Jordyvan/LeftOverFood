@@ -56,6 +56,7 @@ public class RestoranActivity extends AppCompatActivity {
                 for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
                     if(Objects.equals(noteDataSnapshot.child("idresto").getValue(String.class), User.currentUsername)){
                         Menu menu = noteDataSnapshot.getValue(Menu.class);
+                        menu.setFotoUrl(noteDataSnapshot.child("url").getValue(String.class));
                         ListMenu.add(menu);
                     }
                 }

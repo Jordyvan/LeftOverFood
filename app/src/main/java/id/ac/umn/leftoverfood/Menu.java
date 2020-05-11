@@ -25,10 +25,10 @@ public class Menu implements Serializable {
 
     public void setNama(String nm){ nama = nm; }
     public void setDeskripsi(String ds){ deskripsi = ds; }
-    public void setHarga(int hrg){ hrg = harga; }
-    public void setKuantitas(int kwn){ kwn = kuantitas; }
-    public void setFotoUrl(String url){ FotoUrl = url; }
+    public void setHarga(int hrg){ harga = hrg; }
+    public void setKuantitas(int kwn){ kuantitas = kwn; }
     public void setIDResto(String id){ IDResto = id; }
+    public void setFotoUrl(String url){ FotoUrl = url;}
 
     public String getNama(){ return nama; }
     public String getUrl(){ return FotoUrl; }
