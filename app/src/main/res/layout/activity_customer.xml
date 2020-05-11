@@ -18,11 +18,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="394dp"
+            android:layout_width="match_parent"
             android:layout_height="108dp"
             android:src="@drawable/logofix"
-            android:translationY="30px"
-            android:translationX="15dp"/>
+            android:translationY="30px" />
 
         <TextView
             android:id="@+id/TVWelcomeC"
