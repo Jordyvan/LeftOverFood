@@ -4,20 +4,15 @@
     android:layout_height="match_parent"
     android:background="@color/colorBG">
 
-    <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="108dp"
-            android:src="@drawable/logofix"
-            android:translationY="30px" />
-
     <TextView
         android:id="@+id/TVNamaRestoran"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="Nama Restoran"
+        android:layout_marginRight="10dp"
         android:fontFamily="@font/grotesque"
+        android:text="Nama Restoran"
         android:textColor="@color/FontColor"
         android:textSize="28sp" />
 
@@ -26,8 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:text="Lokasi Restoran"
         android:fontFamily="@font/grotesque"
-        android:textColor="@color/FontColor"/>
+        android:text="Lokasi Restoran"
+        android:textColor="@color/FontColor" />
 </LinearLayout>
