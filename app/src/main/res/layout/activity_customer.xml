@@ -58,6 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutR1"
         android:background="@color/colorBG"/>
 
+
     <LinearLayout
         android:id="@+id/linearLayoutR2"
         android:layout_width="match_parent"

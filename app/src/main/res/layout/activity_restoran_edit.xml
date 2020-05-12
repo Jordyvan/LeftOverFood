@@ -6,18 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".RestoranEditActivity"
     android:background="@color/colorBG">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="33dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:fontFamily="@font/grotesque"
             android:text="Nama Restoran"
             android:textColor="@color/FontColor"
-            android:fontFamily="@font/grotesque"
             android:textSize="20sp" />
 
         <EditText
@@ -33,22 +38,21 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:fontFamily="@font/grotesque"
             android:text="Lokasi Restoran"
             android:textColor="@color/FontColor"
-            android:fontFamily="@font/grotesque"
             android:textSize="20sp" />
+
         <Button
             android:id="@+id/btnEditLocationR"
-            android:layout_width="match_parent"
+            android:layout_width="390dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:text="Edit Lokasi Restoran"
-            android:fontFamily="@font/grotesque"/>
+            android:fontFamily="@font/grotesque"
+            android:text="Edit Lokasi Restoran" />
     </LinearLayout>
-
-
 
     <Button
         android:id="@+id/btnUpdateDataR"
