@@ -120,13 +120,6 @@ public class RegisterActivity extends AppCompatActivity {
                         duplicate = true;
                     }
                 }
-
-                if(!duplicate){
-                    submit(user);
-                }else {
-                    Toast.makeText(RegisterActivity.this, "username has been used", Toast.LENGTH_LONG).show();
-                }
-
             }
 
             @Override
@@ -134,6 +127,12 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+
+        if(!duplicate){
+            submit(user);
+        }else {
+            Toast.makeText(RegisterActivity.this, "username has been used", Toast.LENGTH_LONG).show();
+        }
 
 
     }

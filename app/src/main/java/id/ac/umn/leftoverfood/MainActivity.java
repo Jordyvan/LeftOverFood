@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                         if(loginIn){
-                            role = sp.getInt("role", 2);
+                            //role = sp.getInt("role", 2);
 
                             //String roleText = role == 1 ? "Restoran" : "Customer" + ", " + Integer.toString(role);
                             Toast.makeText(MainActivity.this, "Logged in as " + username , Toast.LENGTH_SHORT).show();
