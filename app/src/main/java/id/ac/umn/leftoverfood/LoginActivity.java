@@ -91,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
                         if (loginIn) {
-                            String roleText = role == 1 ? "Restoran" : "Customer" + ", " + Integer.toString(role);
-                            Toast.makeText(LoginActivity.this, "Logged in as " + username + " (" + roleText + ")", Toast.LENGTH_SHORT).show();
+                            //String roleText = role == 1 ? "Restoran" : "Customer" + ", " + Integer.toString(role);
+                            //Toast.makeText(LoginActivity.this, "Logged in as " + username + " (" + roleText + ")", Toast.LENGTH_SHORT).show();
 
                             if (role == 1) {
                                 Intent intent = new Intent(LoginActivity.this, RestoranActivity.class);

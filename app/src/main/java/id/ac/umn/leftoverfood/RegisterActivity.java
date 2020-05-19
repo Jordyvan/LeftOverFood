@@ -112,6 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void submitUserToFB(final User user, final String userN){
         //cek nama user udh ada apa belum
+
         database.child("user").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -119,6 +120,11 @@ public class RegisterActivity extends AppCompatActivity {
                     if (Objects.equals(noteDataSnapshot.child("username").getValue(String.class), userN)) {
                         duplicate = true;
                     }
+                }
+                if(!duplicate){
+                    submit(user);
+                }else {
+                    Toast.makeText(RegisterActivity.this, "username has been used", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -128,11 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        if(!duplicate){
-            submit(user);
-        }else {
-            Toast.makeText(RegisterActivity.this, "username has been used", Toast.LENGTH_LONG).show();
-        }
+
 
 
     }

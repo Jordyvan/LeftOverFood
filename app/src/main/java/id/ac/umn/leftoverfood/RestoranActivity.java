@@ -81,8 +81,6 @@ public class RestoranActivity extends AppCompatActivity {
                 ed.putInt("role", 0);
                 ed.apply();
 
-                Intent intent = new Intent(RestoranActivity.this, LoginActivity.class);
-                startActivity(intent);
                 finish();
             }
         });
@@ -104,7 +102,4 @@ public class RestoranActivity extends AppCompatActivity {
         });
     }
 
-    private void ambilData(){
-
-    }
 }

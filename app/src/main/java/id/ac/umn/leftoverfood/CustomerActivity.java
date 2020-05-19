@@ -77,8 +77,6 @@ public class CustomerActivity extends AppCompatActivity {
                 ed.putInt("role", 0);
                 ed.apply();
 
-                Intent intent = new Intent(CustomerActivity.this, LoginActivity.class);
-                startActivity(intent);
                 finish();
             }
         });
