@@ -9,6 +9,17 @@
     android:background="@color/colorBG"
     tools:context=".inputMakananActivity">
 
+    <ImageView
+        android:id="@+id/inputFoto"
+        android:layout_width="match_parent"
+        android:layout_height="228dp" />
+
+    <Button
+        android:id="@+id/tambahFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ambil Foto"
+        android:fontFamily="@font/grotesque"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -16,8 +27,8 @@
         android:text=" Nama Makanan :"
         android:textSize="20dp"
         android:fontFamily="@font/grotesque"
-        android:textColor="@color/FontColor"
-        android:layout_marginTop="20dp"/>
+        android:textColor="@color/FontColor"/>
+
     <EditText
         android:id="@+id/namaMakanan"
         android:layout_width="match_parent"
@@ -26,7 +37,6 @@
         android:textSize="25dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,6 +44,7 @@
         android:textSize="20dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>
+
     <EditText
         android:id="@+id/harga"
         android:layout_width="match_parent"
@@ -43,7 +54,6 @@
         android:textSize="25dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,6 +61,7 @@
         android:textSize="20dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>/>
+
     <EditText
         android:id="@+id/jumlah"
         android:layout_width="match_parent"
@@ -60,7 +71,6 @@
         android:inputType="number"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>/>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +79,7 @@
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"
         />/>
+
     <EditText
         android:id="@+id/keterangan"
         android:layout_width="match_parent"
@@ -77,20 +88,6 @@
         android:textSize="25dp"
         android:fontFamily="@font/grotesque"
         android:textColor="@color/FontColor"/>/>
-
-    <ImageView
-        android:id="@+id/inputFoto"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="15dp"
-        android:outlineAmbientShadowColor="@color/white"/>
-
-    <Button
-        android:id="@+id/tambahFoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ambil Foto"
-        android:fontFamily="@font/grotesque"/>
 
     <Button
         android:id="@+id/submitMakanan"
